@@ -1,13 +1,11 @@
 
-function addPlayerImage(playerName, height) {
+async function addPlayerImage(playerName, height) {
     // takes in the players name and a desired height in pixels and returns the player's wikipedia thumbnail
     let url = `http://en.wikipedia.org/w/api.php?action=query&titles=${playerName}&prop=pageimages&format=json&pithumbsize=${height}`
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    fetch(proxyUrl + url)
-    .then(function(response) {
-        return response.text();
-    })
-    .then(function(data) {
+    try {
+        const response = await fetch (proxyUrl + url);
+        const data = await response.text();
         let imgUrlStart = data.indexOf("\"source\":") + 9;
         let imgUrlEnd = data.indexOf(",\"width");
         let imgUrl = data.substring(imgUrlStart, imgUrlEnd);
@@ -16,8 +14,8 @@ function addPlayerImage(playerName, height) {
         imgDiv.onload = function(){
             loader.style.display = 'none';
         }
-    })
-    .catch(function(error) {
-        return error;
-    });
+    }
+    catch (error) {
+        console.log(error.message);
+    }
 }

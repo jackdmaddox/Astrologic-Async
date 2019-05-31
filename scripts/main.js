@@ -199,7 +199,7 @@ function addSunsignPicture(playerSign) {
     }
 };
 
-function getPlayerSign(){
+async function getPlayerSign(){
     // main function that takes the user's input, queries wikipedia for data, finds the player's zodiac sign, gets the horoscope data and presents it to the user
     let playerName = takeInput();
     let wikiUrl = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${playerName}`;
@@ -212,12 +212,18 @@ function getPlayerSign(){
         let apiUrl = `https://theastrologer-api.herokuapp.com/api/horoscope/${playerSign}/tomorrow`;
         get(apiUrl)
         .then((response) => {
-            addDate(response.date);
-            addHoroscope(response.horoscope);
-            addIntensity(response.meta.intensity);
-            addSunsign(response.sunsign);
-            addMood(response.meta.mood);
-            addKeywords(response.meta.keywords);
+            // addDate(response.date);
+            addDate("5-31-2019");
+            addHoroscope("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+            // addHoroscope(response.horoscope);
+            addIntensity("86%")
+            // addIntensity(response.meta.intensity);
+            addSunsign("Libra");
+            // addSunsign(response.sunsign);
+            addMood("big mood");
+            // addMood(response.meta.mood);
+            addKeywords("Awesome, Jovial");
+            // addKeywords(response.meta.keywords);
             addPlayerImage(playerName, 400);
             addSunsignPicture(playerSign);
             loader.style.display = 'none';

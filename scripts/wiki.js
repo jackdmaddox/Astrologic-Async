@@ -1,17 +1,15 @@
 const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
-function getWiki(url) {
+async function getWiki(url) {
     // fetches data from wikipedia, using a proxyurl to get around CORS
-    return fetch(proxyUrl + url)
-    .then(function(response) {
-        return response.text();
-    })
-    .then(function(data) {
+    try {
+        const response = await fetch (proxyUrl + url);
+        const data = await response.text();
         return data;
-    })
-    .catch(function(error) {
-        return error;
-    });
+    }
+    catch (error) {
+        console.log(error.message);
+    }
 }
 
 function findBirthday(data) {
