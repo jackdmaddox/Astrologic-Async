@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Astrologic</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/profile-card.css">
+    <link rel='icon' href='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/apple/198/crescent-moon_1f319.png' type='image/x-icon'/ >
+</head>
+<body>
+    <header class="header--main">
+        <h1 class="name">Astrologic</h1>
+        <h2 class="tagline">The Metaphysical Sports Database</h2>
+    </header>
+
+    <!-- Background and search bar -->
+
+    <div class="spaceImage">
+        <div class="spaceImageChild"></div>
+        <div class="search">
+            <input type="text" id="search" class="searchTerm" placeholder="Read a player's future..."></input>
+        </div>
+    </div>
+    
+    <!-- Profile card and information -->
+
+    <div class="wrapper" id="wrapper" style="display:none">
+        
+        <aside class="profile-card">
+            
+            <!-- Loading animation -->
+
+            <div class="loader" id="loader" style="display:none">
+                    <div class="dot1"></div>
+                    <div class="dot2"></div>
+            </div>
+
+            <!-- When the API finishes loading we display the following: -->
+
+            <header>
+                <a target="_blank" href="#" class="playerPic">
+                    <img id="playerImage" class="hoverZoomLink">
+                </a>
+                <div class="info--container">
+                    <div id="closeButton">x</div>
+                    <h1 id='name'></h1>
+                    <p id='sunsign'></p>
+                    <img src='' id='zodPic'>
+                    <p id='intensity'></p>
+                    <p id='mood'></p>
+                    <p id='keywords'></p>
+                    <p id='horoscope'></p>
+                    <p id='date'></p>
+                </div>
+            </header>
+        </aside>
+    </div>    
+    <script src="./scripts/moment.js"></script>
+    <script src="./scripts/getImage.js"></script>
+    <script src="./scripts/wiki.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script>
+    const node = document.getElementById("search");
+    node.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            getPlayerSign();
+        }
+    });
+    </script>
+
+<!-- Signing off and linking personal githubs -->
+
+    <p class="footer--main">
+        Made by <a href="https://github.com/jackdmaddox" target="_blank">&nbsp;Jack</a>, <a href="https://github.com/tedgey" target="_blank">&nbsp;Tedge</a>, and <a href="https://github.com/evmcco" target="_blank">&nbsp;Evan&nbsp;</a> |&nbsp;<a href="https://github.com/jackdmaddox/Astrologic-Fantasy-Sports" target="_blank">Hosted on GitHub</a>
+    </p>
+    </body>
+
+</html>

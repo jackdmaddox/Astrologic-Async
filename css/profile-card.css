@@ -1,0 +1,513 @@
+.profile-card h1 h2 {
+    font-weight: 500;
+    margin: 0px 0px 5px 0px;
+}
+
+.profile-card h1 {
+    font-size: 24px;
+    padding-top: 1.5rem;
+}
+
+.profile-card h2 {
+    font-size: 16px;
+}
+
+.profile-card p {
+    margin: 1rem;
+}
+.profile-card {
+    background: #FFB300;
+    width: 156px;
+    height: 156px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 70px;
+    overflow: scroll;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+    animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+}
+
+#closeButton {
+    position: absolute;
+    right: .5rem;
+    top: 1.5rem;
+    width: 20px;
+    height: 20px;
+    opacity: 0.3;
+    cursor: pointer;
+    color: whitesmoke;
+    font-size: 2rem;
+}
+#close:hover {
+    opacity: 1;
+}
+
+.profile-card header {
+    width: 179px;
+    height: 280px;
+    /* padding: 40px 20px 30px 20px; */
+    /* padding: 20px; */
+    display: inline-block;
+    float: left;
+    border-right: 2px dashed #EEEEEE;
+    /* background: grey; */
+    /* color: #000000; */
+    margin-top: 50px;
+    opacity: 0;
+    text-align: center;
+    -webkit-animation: moveIn 1s 3.1s ease forwards;
+    animation: moveIn 1s 3.1s ease forwards;
+    padding: 0;
+    background: rgba(0,0,0, .75) ;
+    color: rgb(117, 117, 117);
+}
+
+.profile-card header h1 {
+    background: -webkit-linear-gradient(right, #aa6677, #445588);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;}
+
+.profile-card header a {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    width: 40%;
+    /* margin: 25px 30px; */
+    display: flex;
+    align-items: center;
+}
+
+.profile-card header a > img {
+    float: left;
+    /* width: 120px; */
+    /* max-height: 80%; */
+    max-width: 100%;
+    max-height:
+    -webkit-transition: -webkit-box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.06);
+}
+
+.info--container {
+    position: absolute;
+    left: 45%;
+    width: auto;
+    text-align: left;
+    height: auto;
+}
+
+.profile-card .profile-bio {
+    width: 680px;
+    height: 180px;
+    display: inline-block;
+    float: right;
+    padding: 50px 20px 30px 20px;
+    background: #FFFFFF;
+    color: #333333;
+    margin-top: 50px;
+    text-align: center;
+    opacity: 0;
+    -webkit-animation: moveIn 1s 3.1s ease forwards;
+    animation: moveIn 1s 3.1s ease forwards;
+}
+
+@-webkit-keyframes init {
+    0% {
+    width: 0px;
+    height: 0px;
+    }
+    100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0px;
+    opacity: 1;
+    }
+}
+
+@keyframes init {
+    0% {
+    width: 0px;
+    height: 0px;
+    }
+    100% {
+width: 56px;
+height: 56px;
+margin-top: 0px;
+opacity: 1;
+    }}@-webkit-keyframes puff {
+    0% {
+top: 100%;
+height: 0px;
+padding: 0px;
+    }
+    100% {
+top: 50%;
+height: 100%;
+padding: 0px 100%;
+    }}@keyframes puff {
+    0% {
+    top: 100%;
+    height: 0px;
+    padding: 0px;
+    }
+    100% {
+    top: 50%;
+    height: 100%;
+    padding: 0px 100%;
+    }
+}
+
+@-webkit-keyframes borderRadius {
+    0% {
+    -webkit-border-radius: 50%;
+    }
+    100% {
+    -webkit-border-radius: 0px;
+    }
+}
+
+@keyframes borderRadius {
+    0% {
+    -webkit-border-radius: 50%;
+    }
+    100% {
+    border-radius: 0px;
+    }
+}
+
+@-webkit-keyframes moveDown {
+    0% {
+    top: 50%;
+    }
+    50% {
+    top: 40%;
+    }
+    100% {
+    top: 100%;
+    }
+}
+
+@keyframes moveDown {
+    0% {
+    top: 50%;
+    }
+    50% {
+    top: 40%;
+    }
+    100% {
+    top: 100%;
+    }
+}
+
+@-webkit-keyframes moveUp {
+    0% {
+    background: rgb(255, 0, 191);
+    top: 100%;
+    }
+    50% {
+    top: 40%;
+    }
+    100% {
+    top: 50%;
+    background: #E0E0E0;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+    background: rgb(255, 0, 191);
+    top: 100%;
+    }
+    50% {
+    top: 40%;
+    }
+    100% {
+    top: 50%;
+    background: #E0E0E0;
+    }
+}
+
+@-webkit-keyframes materia {
+    0% {
+    background: #E0E0E0;
+    }
+    50% {
+    -webkit-border-radius: 4px;
+    }
+    100% {
+    width: 440px;
+    height: 280px;
+    background: #FFFFFF;
+    -webkit-border-radius: 4px;
+    }
+}
+
+@keyframes materia {
+    0% {
+    background: #E0E0E0;
+    }
+    50% {
+    border-radius: 4px;
+    }
+    100% {
+    width: 440px;
+    height: 280px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    }
+}
+
+@-webkit-keyframes moveIn {
+    0% {
+    margin-top: 50px;
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+    margin-top: -20px;
+    }
+}
+
+@keyframes moveIn {
+    0% {
+    margin-top: 50px;
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+    margin-top: -20px;
+    }
+}
+
+@-webkit-keyframes scaleIn {
+    0% {
+    -webkit-transform: scale(0);
+    }
+    100% {
+    -webkit-transform: scale(1);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+    transform: scale(0);
+    }
+    100% {
+    transform: scale(1);
+    }
+}
+
+@-webkit-keyframes ripple {
+    0% {
+    transform: scale3d(0, 0, 0);
+    }
+    50%,
+    100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    }
+    100% {
+    opacity: 0;
+    }
+}
+
+@keyframes ripple {
+    0% {
+    transform: scale3d(0, 0, 0);
+    }
+    50%,
+    100% {
+    transform: scale3d(1, 1, 1);
+    }
+    100% {
+    opacity: 0;
+    }
+}
+
+@media screen and (min-aspect-ratio: 4/3) {
+    body {
+    background-size: cover;
+    }
+    body:before {
+    width: 0px;
+    }
+    @-webkit-keyframes puff {
+    0% {
+        top: 100%;
+        width: 0px;
+        padding-bottom: 0px;
+    }
+    100% {
+        top: 50%;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+    }
+    @keyframes puff {
+    0% {
+        top: 100%;
+        width: 0px;
+        padding-bottom: 0px;
+    }
+    100% {
+        top: 50%;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+    }
+}
+
+/* For small sized screens: */
+
+@media screen and (min-height: 480px) {
+    .profile-card header {
+    width: 45rem;
+    height: 25rem;
+    /* padding: 30px 20px; */
+    display: flex;
+    float: none;
+    border-right: none;
+    }
+    .profile-card .profile-bio {
+    width: auto;
+    height: auto;
+    padding: 15px 20px 30px 20px;
+    display: block;
+    float: none;
+    }
+    .profile-social-links {
+    width: 100%;
+    display: block;
+    float: none;
+    }
+    @-webkit-keyframes materia {
+    0% {
+        background: #E0E0E0;
+    }
+    50% {
+        -webkit-border-radius: 4px;
+    }
+    100% {
+        width: 680px;
+        height: 30rem;
+        background: #FFFFFF;
+        -webkit-border-radius: 4px;
+    }
+    }
+    @keyframes materia {
+    0% {
+        background: #E0E0E0;
+    }
+    50% {
+        border-radius: 4px;
+    }
+    100% {
+        width: 680px;
+
+        height: auto;
+        /* background: grey; */
+        height: 30rem;
+        background: grey;
+        border-radius: 4px;
+        background: rgba(0,0,0, .75) ;
+        color: rgb(117, 117, 117);
+    }
+    }
+}
+
+/* Medium sized screens: */
+
+@media screen and (max-width: 750px) {
+
+    .profile-card {
+    overflow: scroll;
+    }
+
+    .profile-card header {
+    width: auto;
+    height: auto;
+    padding: 30px 20px;
+    display: block;
+    float: none;
+    border-right: none;
+    }
+    .profile-card .profile-bio {
+    width: auto;
+    height: auto;
+    padding: 15px 20px 30px 20px;
+    display: block;
+    float: none;
+
+    }
+    .info--container {
+        position: inherit;
+        text-align: center;
+    }
+
+    .playerPic {
+        left: 30%;
+    }
+
+    #zodPic {
+        display: none;
+    }
+
+    .profile-social-links {
+    width: 100%;
+    display: none;
+    float: none;
+    }
+    @-webkit-keyframes materia {
+    0% {
+        background: #E0E0E0;
+    }
+    50% {
+        -webkit-border-radius: 4px;
+    }
+    100% {
+        width: 17.5rem;
+        height: 30rem;
+        background: rgba(0,0,0, .75);
+        -webkit-border-radius: 4px;
+    }
+    }
+    @keyframes materia {
+    0% {
+        background: #E0E0E0;
+    }
+    50% {
+        border-radius: 4px;
+    }
+    100% {
+        width: 17.5rem;
+        height: 30rem;
+        background: rgba(0,0,0, .75);
+        border-radius: 4px;
+    }
+    }
+
+    .footer--main {
+        bottom: 0;
+        color: #445588;
+        display: flex;
+        font-family: Arial, Helvetica, sans-serif;
+        height: 3rem;
+        justify-content: center;
+        margin: .5rem auto 0;
+        position: absolute;
+        width: 100%;
+        background: -webkit-linear-gradient(right, #aa6677, #445588);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
